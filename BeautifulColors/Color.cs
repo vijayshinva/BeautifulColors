@@ -155,11 +155,11 @@ namespace BeautifulColors
             }
             else if (max == g)
             {
-                hue = (b - r) / chroma + 2;
+                hue = ((b - r) / chroma) + 2;
             }
             else if (max == b)
             {
-                hue = (r - g) / chroma + 4;
+                hue = ((r - g) / chroma) + 4;
             }
             hue = 60 * hue;
             return hue;
@@ -183,7 +183,7 @@ namespace BeautifulColors
             double r, g, b;
             r = g = b = 0;
             var h = hue / 60;
-            var x = chroma * (1 - Math.Abs(h % 2 - 1));
+            var x = chroma * (1 - Math.Abs((h % 2) - 1));
             if (0 <= h && h <= 1)
             {
                 r = chroma;
@@ -226,11 +226,11 @@ namespace BeautifulColors
 
         private static Tuple<byte, byte, byte> HslToRgb(double H, double S, double L)
         {
-            var chroma = (1 - Math.Abs(2 * L - 1)) * S;
+            var chroma = (1 - Math.Abs((2 * L) - 1)) * S;
 
             var rgb = HueChromaToRGB(H, chroma);
 
-            var m = L - chroma / 2;
+            var m = L - (chroma / 2);
 
             var r = rgb.Item1 + m;
             var g = rgb.Item2 + m;
@@ -254,7 +254,7 @@ namespace BeautifulColors
             double saturation = 0;
             if (luminance != 1)
             {
-                saturation = chroma / (1 - Math.Abs(2 * luminance - 1));
+                saturation = chroma / (1 - Math.Abs((2 * luminance) - 1));
             }
 
             return new Tuple<double, double, double>(hue, saturation, luminance);
@@ -298,7 +298,7 @@ namespace BeautifulColors
             double saturation = 0;
             if (intensity != 0)
             {
-                saturation = 1 - min / intensity;
+                saturation = 1 - (min / intensity);
             }
 
             return new Tuple<double, double, double>(hue, saturation, intensity);
@@ -325,11 +325,11 @@ namespace BeautifulColors
         public override int GetHashCode()
         {
             var hashCode = 1960784236;
-            hashCode = hashCode * -1521134295 + base.GetHashCode();
-            hashCode = hashCode * -1521134295 + R.GetHashCode();
-            hashCode = hashCode * -1521134295 + G.GetHashCode();
-            hashCode = hashCode * -1521134295 + B.GetHashCode();
-            hashCode = hashCode * -1521134295 + A.GetHashCode();
+            hashCode = (hashCode * -1521134295) + base.GetHashCode();
+            hashCode = (hashCode * -1521134295) + R.GetHashCode();
+            hashCode = (hashCode * -1521134295) + G.GetHashCode();
+            hashCode = (hashCode * -1521134295) + B.GetHashCode();
+            hashCode = (hashCode * -1521134295) + A.GetHashCode();
             return hashCode;
         }
 
@@ -362,7 +362,6 @@ namespace BeautifulColors
         public override string ToString()
         {
             return BitConverter.ToString(new byte[] { R, G, B });
-
         }
 
         public string ToString(string format, IFormatProvider formatProvider)

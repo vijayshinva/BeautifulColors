@@ -27,7 +27,6 @@ namespace BeautifulColors
 {
     public enum NamedColors
     {
-
         AbsoluteZero = 0x0048BA,
 
         AcidGreen = 0xB0BF1A,
@@ -2903,6 +2902,5 @@ namespace BeautifulColors
         ZinnwalditeBrown = 0x2C1608,
 
         Zomp = 0x39A78E,
-
     }
 }

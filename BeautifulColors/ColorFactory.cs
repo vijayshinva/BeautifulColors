@@ -71,7 +71,7 @@ namespace BeautifulColors
                 var randomValues = new byte[3];
                 for (int i = 0; i < count; i++)
                 {
-                    randomColors.Add(Color.FromHSV(random.Next(0, 360), random.NextDouble() * .5 + .5, random.NextDouble() * .7 + .3));
+                    randomColors.Add(Color.FromHSV(random.Next(0, 360), (random.NextDouble() * .5) + .5, (random.NextDouble() * .7) + .3));
                 }
             }
             else
@@ -79,7 +79,7 @@ namespace BeautifulColors
                 var seed = Color.FromNamedColor(hue.Value);
                 for (int i = 0; i < count; i++)
                 {
-                    randomColors.Add(Color.FromHSV(seed.HSV.Item1 - 5 + random.Next(0, 10), random.NextDouble() * .5 + .5, random.NextDouble() * .4 + .6));
+                    randomColors.Add(Color.FromHSV(seed.HSV.Item1 - 5 + random.Next(0, 10), (random.NextDouble() * .5) + .5, (random.NextDouble() * .4) + .6));
                 }
             }
             return randomColors;

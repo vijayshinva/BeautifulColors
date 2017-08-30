@@ -26,15 +26,15 @@ import os
 from collections import Counter
 
 def generate_csharp_enum(colors):
-    with open('NamedColors.cs', 'w') as file:
-        file.write('namespace BeautifulColors')
-        file.write('{'+ os.linesep)
-        file.write('public enum NamedColors')
-        file.write('{'+ os.linesep)
-        for name, hex in colors:
-            file.write(name+' = 0x'+hex[1:]+','+os.linesep)
-        file.write('}'+ os.linesep)
-        file.write('}'+ os.linesep)
+    with open('NamedColors.cs', 'w') as f:
+        f.write('namespace BeautifulColors')
+        f.write('{'+ os.linesep)
+        f.write('public enum NamedColors')
+        f.write('{'+ os.linesep)
+        for name, hexcode in colors:
+            f.write(name+' = 0x'+hexcode[1:]+','+os.linesep)
+        f.write('}'+ os.linesep)
+        f.write('}'+ os.linesep)
 
 def deduplicate_list(data):
     seen = set()
@@ -45,8 +45,7 @@ def extract_page(url):
     page = requests.get(url)
     if page.status_code == 200:
         return page.content
-    else:
-        return None
+    return None
 
 def extract_colors(content):
     colors = []
@@ -63,8 +62,8 @@ def extract_colors(content):
             pass
     return colors
 
-def camel_case(input):
-    return ''.join(x for x in input.title() if x.isalnum())
+def camel_case(data):
+    return ''.join(x for x in data.title() if x.isalnum())
 
 def main():
     colors = []

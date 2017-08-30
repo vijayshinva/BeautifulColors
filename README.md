@@ -17,4 +17,5 @@ A .NET Core Library for working with colors
 [![license](https://img.shields.io/github/license/vijayshinva/beautifulcolors.svg)](https://github.com/vijayshinva/BeautifulColors/blob/master/LICENSE)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fvijayshinva%2FBeautifulColors.svg?type=shield)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fvijayshinva%2FBeautifulColors?ref=badge_shield)
 
+
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fvijayshinva%2FBeautifulColors.svg?type=large)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fvijayshinva%2FBeautifulColors?ref=badge_large)
