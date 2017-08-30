@@ -1,0 +1,13 @@
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Beautiful Colors</h2>
+
+@foreach (var item in (IEnumerable<string>)ViewData["Colors"])
+{
+    <svg height="100" width="100">
+        <circle cx="50" cy="50" r="40" stroke="@item" stroke-width="3" fill="@item" />
+    </svg>
+}
