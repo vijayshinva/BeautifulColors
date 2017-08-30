@@ -58,6 +58,12 @@ var randomNamedColors = colorFactory.RandomNamed(1);
 ```
 
 ## Examples
+Demos in the Examples folder.
+
+#### BeautifulWeb
+This simple demo shows 256 randomly generated colors.
+
+![Beautiful Web](https://github.com/vijayshinva/BeautifulColors/tree/master/Examples/BeautifulWeb/BeautifulWeb.png)
 
 ## Reference
 - https://en.wikipedia.org/wiki/HSL_and_HSV
