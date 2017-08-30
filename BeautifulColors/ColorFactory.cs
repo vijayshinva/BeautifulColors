@@ -68,7 +68,6 @@ namespace BeautifulColors
             var randomColors = new List<Color>(count);
             if (hue == null)
             {
-                var randomValues = new byte[3];
                 for (int i = 0; i < count; i++)
                 {
                     randomColors.Add(Color.FromHSV(random.Next(0, 360), (random.NextDouble() * .5) + .5, (random.NextDouble() * .7) + .3));

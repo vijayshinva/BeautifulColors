@@ -4,6 +4,7 @@ A .NET Core Library for working with colors
 
 [![Build status](https://ci.appveyor.com/api/projects/status/8jk4l4b38m8bdasx/branch/master?svg=true)](https://ci.appveyor.com/project/vijayshinva/beautifulcolors/branch/master)
 [![CodeFactor](https://www.codefactor.io/repository/github/vijayshinva/beautifulcolors/badge/master)](https://www.codefactor.io/repository/github/vijayshinva/beautifulcolors/overview/master)
+[![NuGet version](https://badge.fury.io/nu/BeautifulColors.svg)](https://badge.fury.io/nu/BeautifulColors)
 
 ## Overview
 - [Installation](#installation)
@@ -33,11 +34,12 @@ var color_186276 = Color.FromRgb(24, 98, 118);
 var color_fff700 = Color.FromNamedColor(NamedColors.YellowSunshine);
 
 // The ToString() function takes a format string
-Console.WriteLine(color_fff700);
-Console.WriteLine(color_fff700.ToString("HSV", null));
-Console.WriteLine(color_fff700.ToString("HSL", null));
-Console.WriteLine(color_fff700.ToString("RGB", null));
-Console.WriteLine(color_fff700.ToString("RGBA", null));
+Console.WriteLine(color_fff700); // FF-F7-00
+Console.WriteLine(color_fff700.ToString("HSV", null)); // 58.1176470588235,1,1
+Console.WriteLine(color_fff700.ToString("HSL", null)); // 58.1176470588235,1,0.5
+Console.WriteLine(color_fff700.ToString("RGB", null)); // 255,247,0
+Console.WriteLine(color_fff700.ToString("RGBA", null)); // 255,247,0,255
+Console.WriteLine(color_fff700.ToString("HEX", null)); // #FFF700
 ```
 ```C#
 // ColorFactory can be used to generate random colors and pallets
@@ -50,8 +52,9 @@ var beautifulRandomColors = colorFactory.RandomBeautiful(5);
 ...
 ...
 // You can also pass a Hue to generate colors within a 10 degree range
-var randomColors = colorFactory.Random(count:1,hue:NamedColors.Azure); 
+var randomColors = colorFactory.Random(count:10, hue:NamedColors.Azure); 
 var beautifulRandomColors = colorFactory.RandomBeautiful(count:10, hue:NamedColors.YellowSunshine);
+var randomNamedColors = colorFactory.RandomNamed(1);
 ```
 
 ## Examples
