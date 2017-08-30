@@ -2,6 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
+    <RepositoryUrl>https://github.com/vijayshinva/BeautifulColors</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/vijayshinva/BeautifulColors</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/vijayshinva/BeautifulColors/blob/master/LICENSE</PackageLicenseUrl>
+    <Copyright>Copyright (c) 2017 Vijayshinva Karnure</Copyright>
+    <Description>A .NET Core Library for working with colors</Description>
+    <Company>http://vijayshinva.github.io/</Company>
+    <Authors>Vijayshinva Karnure</Authors>
+    <PackageTags>color color-scheme color-palette dotnet-core</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>0.0.1</Version>
   </PropertyGroup>
 
 </Project>
