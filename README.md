@@ -6,8 +6,55 @@ A .NET Core Library for working with colors
 [![CodeFactor](https://www.codefactor.io/repository/github/vijayshinva/beautifulcolors/badge/master)](https://www.codefactor.io/repository/github/vijayshinva/beautifulcolors/overview/master)
 
 ## Overview
+- [Installation](#installation)
+- [Usage](#usage)
+- [Examples](#examples)
+- [License](#license)
 
+## Installation
 
+Install the package **BeautifulColors** from [NuGet](https://www.nuget.org/packages/BeautifulColors/) 
+or install it from the [Package Manager Console](https://docs.microsoft.com/en-us/nuget/tools/package-manager-console):
+
+```
+PM> Install-Package BeautifulColors
+```
+
+## Usage
+
+```C#
+using BeautifulColors;
+...
+...
+// Colors can be instantiated in a number of ways
+var color_80ffff = Color.FromHSL(180, 1, .75);
+var color_bfbf00 = Color.FromHSV(60, 1, .75);
+var color_186276 = Color.FromRgb(24, 98, 118);
+var color_fff700 = Color.FromNamedColor(NamedColors.YellowSunshine);
+
+// The ToString() function takes a format string
+Console.WriteLine(color_fff700);
+Console.WriteLine(color_fff700.ToString("HSV", null));
+Console.WriteLine(color_fff700.ToString("HSL", null));
+Console.WriteLine(color_fff700.ToString("RGB", null));
+Console.WriteLine(color_fff700.ToString("RGBA", null));
+```
+```C#
+// ColorFactory can be used to generate random colors and pallets
+var colorFactory = new ColorFactory();
+...
+...
+var randomColors = colorFactory.Random(15); 
+// RandomBeautiful generates bright colors (Saturation > .5 and Value > .7)
+var beautifulRandomColors = colorFactory.RandomBeautiful(5);
+...
+...
+// You can also pass a Hue to generate colors within a 10 degree range
+var randomColors = colorFactory.Random(count:1,hue:NamedColors.Azure); 
+var beautifulRandomColors = colorFactory.RandomBeautiful(count:10, hue:NamedColors.YellowSunshine);
+```
+
+## Examples
 
 ## Reference
 - https://en.wikipedia.org/wiki/HSL_and_HSV

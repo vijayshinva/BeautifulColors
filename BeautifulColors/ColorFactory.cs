@@ -57,7 +57,7 @@ namespace BeautifulColors
                 var seed = Color.FromNamedColor(hue.Value);
                 for (int i = 0; i < count; i++)
                 {
-                    randomColors.Add(Color.FromHSV(seed.HSV.Item1, random.NextDouble(), random.NextDouble()));
+                    randomColors.Add(Color.FromHSV(seed.HSV.Item1 - 5 + random.Next(0, 10), random.NextDouble(), random.NextDouble()));
                 }
             }
             return randomColors;
